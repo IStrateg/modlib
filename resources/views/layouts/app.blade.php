@@ -15,13 +15,27 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- flickty -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+        <script>
+            if (localStorage.getItem('dark-mode') == 'true' || !('dark-mode' in localStorage)) {
+                document.querySelector('html').classList.add('dark');
+            } else {
+                document.querySelector('html').classList.remove('dark');
+            }
+        </script>
     </head>
-    <body class="font-sans antialiased">
-        <!-- Page Heading -->
+    <body class="font-sans antialiased transition duration-300 ease-in-out dark:bg-dark dark:text-white-text">
+        <div class="flex flex-col overflow-hidden min-h-screen">
+            <!-- Page Heading -->
+            <x-sections.header />
 
-        <!-- Page Content -->
-        {{ $slot }}
-
+            <!-- Page Content -->
+            {{ $slot }}
+        </div>
         @stack('modals')
 
         @livewireScripts

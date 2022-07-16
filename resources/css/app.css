@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-switch {
+    position: relative;
+    user-select: none;
+    width: 44px;
+}
+
+.form-switch label>span:first-child {
+    position: absolute;
+    display: block;
+    border-radius: 9999px;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    right: 50%;
+    transition: all .15s ease-out;
+}
+
+.form-switch input[type=checkbox].light-switch+label {
+    --tw-bg-opacity: 1;
+    background-color: rgb(58 186 180/var(--tw-bg-opacity));
+}
+
+.form-switch label {
+    display: block;
+    height: 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 9999px;
+}
+
+.dark .form-switch input[type=checkbox].light-switch+label>span:first-child {
+    left: 22px;
+}
+
+.form-switch input[type=checkbox]:checked+label>span:first-child {
+    left: 22px;
+}
+
+.switch {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    border-color: transparent;
+    font-weight: 500;
+    line-height: 1.375;
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+    transition-duration: .15s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.carousel-cell {
+    width: 158px;
+    height: 300px;
+    /*margin-right: 10px;*/
+    border-radius: 0.375rem;
+}
+
+.carousel img {
+    height: 300px;
+}
+
+.carousel-cell:hover {
+    opacity: .9;
+}
+
+[x-cloak] { display: none !important; }

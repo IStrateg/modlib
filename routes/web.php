@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\CatalogComponent;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeComponent::class);
+Route::get('/', HomeComponent::class)->name('home');
+Route::get('/catalog', CatalogComponent::class)->name('catalog');
 
 Route::middleware([
     'auth:sanctum',
